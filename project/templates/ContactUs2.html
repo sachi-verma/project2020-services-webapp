@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!-- Pogo Slider CSS -->
+<link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}">
+<!-- Site CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">    
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="[% static 'css/custom.css' %}">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+<style>
+body {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  background-color: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contact {
+/* background-color: #00e6b8; */
+background-image: linear-gradient(to bottom right, #00b8e6, #0033cc);
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color:red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1a1a1a;
+  color: red;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.names {
+color: #ffffff;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.accordion {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  font-family: 'Comfortaa', cursive;
+}
+
+.active, .accordion:hover {
+  background-color: #404040; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: #80bfff;
+  color: #000000;
+  overflow: hidden;
+  text-align: left;
+  font-family: 'Comfortaa', cursive;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #4d4d4d;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: red;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: #99bbff; font-family: 'Comfortaa', cursive; font-size: 20px;}
+
+.quote {
+color: #f1f1f1;
+font-family: 'Comfortaa', cursive;
+font-size: 20px;
+}
+</style>
+</head>
+<body>
+  <header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="index.html"><img src="{% static 'images/WebChat Logo.png' %}" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="home">Home</a></li>
+                        <li><a class="nav-link" href="serve">Services</a></li>
+                        <li><a class="nav-link" href="emergency">Emergency Help</a></li>
+						            <li><a class="nav-link active" href="contact_us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+
+<div class="contact">
+  <div style="text-align:center; color: #ffffff ; margin-top: 120px;" >
+    <h1 style="font-size: 50px; font-family: 'Lobster', cursive;">Contact Us</h1>
+	<h3 style="font-size: 25px; font-family: 'Comfortaa', cursive;"> Here are our contact details </h3> 
+	<p style="font-size: 20px; font-family: 'Comfortaa', cursive;">Joel Ayappa: +91 98336 38949 <br>
+	Prerna Sharma: +91 99237 61397 <br>
+	Sachi Verma: +91 75060 54956 <br>
+  </p>
+  </div>
+  <div class="container">
+  <div class="names">
+  <div class="row">
+    <div class="column">
+		<h2 style="font-family: 'Comfortaa', cursive;"> You can write to us directly <br> (For any queries/problems you faced) </h2>
+      <form action="data1" method="POST">
+        {% csrf_token %}
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="fullname" placeholder="Your name..">
+        <label for="lname">Email Id</label>
+        <input type="email" id="lname" name="email_id" placeholder="Your email..">
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="column">
+	<h2 style="font-family: 'Comfortaa', cursive;"> Give us your useful feedback/testimonial <br> (After any service experienced via our site) </h2>
+      <form action="/action_page.php">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Email Id</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your email..">
+        <label for="subject">Feedback</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+<br>
+<div class="faq" >
+	<div style="text-align: center; color: #ffffff;">
+<h2 style="font-size: 40px; font-family: 'Lobster', cursive;"> <u>Frequently Asked Questions </u></h2>
+<button class="accordion"> How do I use the helpline numbers page? </button>
+<div class="panel">
+  <p>You can view the list of all helpline numbers (which are sorted alphabetically) and use whichever number suits your need </p>
+</div>
+
+<button class="accordion">How do I use the services page?</button>
+<div class="panel">
+  <p>You can browse through all of the services offered on our page and you can also filter them based on your location, category and type of service</p>
+</div>
+
+<button class="accordion">What should I do if I want to give feedback about a service or read other people's feedback?</button>
+<div class="panel">
+  <p>There is a feedback form using which we post the good revies in the testimonials section for other people to read and we get back to the people with bad feedback to resolve their doubts and sort it out with the service as well</p>
+</div>
+
+<button class="accordion">How will the chatbot help me?</button>
+<div class="panel">
+  <p>The chatbot can be used for multiple purposes like quick enquiries and immediate responses, as well as it can be used to give you a result based on your replies rather than having you to scroll through web pages</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</div>
+</div>
+<br>
+<div class="test">
+<div style="text-align: center; color: #ffffff;">
+<h2 style="font-size: 40px; font-family: 'Lobster', cursive;"> <u>Testimonials </u></h2>
+</div>
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <q class="quote">The service, particularly the mechanic named mech1, was very good and efficient, highly recommended</q>
+  <p class="author">CLIENT abc</p>
+</div>
+
+<div class="mySlides">
+  <q class="quote">Emergency number for senior citizens works very well in Mumbai</q>
+  <p class="author">CLIENT xyz</p>
+</div>
+
+<div class="mySlides">
+  <q class="quote">The videos on the home page help in fixing things at home without taking the risk of calling someone home especially because of COVID</q>
+  <p class="author">CLIENT pqr</p>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</div>
+
+
+
+ 	<!-- ALL JS FILES -->
+   <script src="{% static 'js/jquery.min.js' %}"></script>
+   <script src="{% static 'js/popper.min.js' %}"></script>
+   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   
+   <!-- ALL PLUGINS -->
+   <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+   <script src="{% static 'js/jquery.pogo-slider.min.js' %}"></script> 
+   <script src="{% static 'js/slider-index.js' %}"></script>
+   <script src="{% static 'js/smoothscroll.js' %}"></script>
+   <script src="{% static 'js/form-validator.min.js' %}"></script>
+   <script src="{% static 'js/contact-form-script.js' %}"></script>
+   <script src="{% static 'js/isotope.min.js' %}"></script>	
+   <script src="{% static 'js/images-loded.min.js' %}"></script>	
+   <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

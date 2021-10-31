@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Services Information</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Phone_number</th>
+            <th>Location</th>
+          </tr>
+        </thead> 
+        <tbody>
+            {% for s in services1 %}
+          <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ s.name}}</td>
+            <td>{{ s.category}}</td>
+            <td>{{ s.phone_number}}</td>
+            <td>{{ s.location}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>  
+    </table>
+
+    <h2>Search by Location</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Phone_number</th>
+            <th>Location</th>
+          </tr>
+        </thead> 
+        <tbody>
+            {% for s in service2 %}
+          <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ s.name}}</td>
+            <td>{{ s.category}}</td>
+            <td>{{ s.phone_number}}</td>
+            <td>{{ s.location}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>  
+    </table>
+
+    <h2>Search by Category</h2>
+    <table>
+    <thead>
+      <tr>
+          <th>Sr No.</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Phone_number</th>
+          <th>Location</th>
+        </tr>
+      </thead> 
+      <tbody>
+          {% for s in service3 %}
+        <tr>
+          <td>{{ forloop.counter}}</td>
+          <td>{{ s.name}}</td>
+          <td>{{ s.category}}</td>
+          <td>{{ s.phone_number}}</td>
+          <td>{{ s.location}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>  
+  </table>
+
+  <form action="register" method="POST">
+    {% csrf_token%}
+    <label for="fname_">Name:</label><br>
+    <input type="text"  name="fname" ><br>
+    <label for="cat">Category:</label><br>
+    <input type="text"  name="cat" ><br>
+    <label for="num">Phone Number:</label><br>
+    <input type="number" name="num" ><br>
+    <label for="loc">Location:</label><br>
+    <input type="text"  name="loc"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+</body>
+</html>

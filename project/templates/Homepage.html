@@ -1,0 +1,158 @@
+{% load static %}
+<!Doctype html>
+<html>
+  
+     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"> 
+     <style>
+            
+		 .head{
+			background-image: url("{% static 'assets/Welcome Background.jpg' %}");
+		 }	
+		
+		 .center{
+			 display: block;
+			 margin-left: auto;
+			 margin-right: auto;
+			 width: 50%;
+			 }
+			 
+		 .body{
+			 background-color: #000000;
+			}
+  
+		 .nav{
+			 background-color: #ffffff;
+			 font-family: bebas neue;
+			 font-size: 210%;
+			 padding: 10px;
+			 margin: 10px 0px 0px 0px;
+            }
+
+		 .menu{
+			 display: inline-block;
+			 padding: 10px;
+			 margin: 5px 10px 5px 10px;
+			}
+  
+		 .intro{
+			 font-family: bebas neue;
+			 font-size: 170%;
+			 padding: 10px;
+			 margin: 10px 30px 10px 30px;
+			 background-image: url("{% static 'assets/Intro Background.jpg' %}");
+			}
+
+		 .linkheading{
+			 background-color: #FF7467;
+			 color: #000000;
+			 font-family: ink free;
+			 font-size: 400%;
+			 padding:10px;
+			 margin: 0px 20px 10px 20px;
+			 text-align: center;
+			}
+			
+         .links{
+			 color: #000000;
+			 padding: 10px;
+			 margin: 0px 50px 25px 30px;
+			 font-family: segoe print;
+			 font-size:200%;
+			 text-align: center;
+			}
+			
+		 a:visited{
+		     color: #FF7467;
+		 }
+		 
+		 a:unvisited{
+		     color: #FF7467;
+		 }
+		 
+		 .column{
+			 float:right;
+			 display: inline-block;
+		 }
+			
+	     .button{
+		     background-color: #18A558;
+			 color: #000000;
+			 font-size: 400%;
+			 font-family: impact;
+			 padding: 10px;
+			 margin-left: 1050px;
+			 text-align: center;
+			}
+		 
+		 @media screen and (max-width:620px) {
+             .head{
+                 margin: 10px 5px 10px 5px;
+				 font-size: 400%;
+				}
+			}
+		
+		 @media screen and (max-width:620px) {
+             .body, .nav, .intro, .menu, .linkheading, .links{
+                 margin: 10px 0px 10px 0px;				 
+				}
+			}
+		 @media screen and (max-width:620px) {
+             .button{
+                 margin: 10px 0px 10px 60px;				 
+				}
+			}
+  </style>
+  <head>
+	<div class="head">
+    <img src = "{% static 'assets/Welcome Image.png' %}" alt = "Welcome!" class = "center" > </img></div>
+  </head> 
+  <body class = "body">
+    <nav>
+      <ul class = "nav">
+	     <li class = "menu"> <img src = "{% static 'assets/Logo.jpg' %}" style="padding:0px"></img> </li>
+	     <li class = "menu"> <a href = "home" style="text-decoration:none"> HOME </a> </li>
+		 <li class = "menu"> <a href = "serve" style="text-decoration:none"> SERVICES </a> </li>
+		 <li class = "menu"> <a href = "emergency" style="text-decoration:none"> EMERGENCY SERVICES </a> </li>
+		 <li class = "menu"> <a href = "contact_us" style="text-decoration:none"> CONTACT US </a> </li>
+	  </ul>
+	</nav>
+	 <article class = "intro" style = "color:white;">
+	     <p>
+	         Welcome to AtYourService.com! We are here to provide you with all kinds of electronic, medical, mechanical and household services information 
+			 in your vicinity. You can find help as per your requirement by visiting our services page for which you need to click on the <u>Services</u> tab 
+			 in above navigation bar. For emergencies we have provided a quick help facility, all you need to do is click on the <u>Emergency Services</u> tab. 
+			 In case of any query feel free to contact us and get it discussed within 24 hours gaurenteed. For placing your query you can put a mail or call us, 
+			 details for the same are provided on the Contact Us page.Finding it difficult to choose reliable options? Get it answered by the experienced ones! 
+			 Check out thetestimonials section on our <u>Contact Us</u> page to find out what is the best for you. We have updated feedback and ratings to get 
+			 you out of dilemma.
+		 </p>
+	     <p>
+			 Still confused regarding how to go about the website? No worries, we have brought to you our <u> <b>CHATBOT</u></b> service. Get all your details filled to 
+			 reach precised options. Also, get answers to all your questions immediately by our chatbot. For this click on the CHATBOT buton in the below right corner 
+			 now! Hope you have a good experience here, let us know your feedback.		 
+		 </p>
+		 <p>
+		 Regards,
+		 </p>
+		 <p>
+		 Team Webchat
+		 </p> </div>
+     </article>
+	 <p class = "linkheading">
+	     <b>Fix-it-yourself!</b>
+	 </p>
+	 <nav>
+	  <img src = "{% static 'assets/Fix it Yourself.jpg' %}" alt = "Image" style = "width: 550px; height: 300px; background-color:#ffffff; margin-left:50px;"></img>
+      <ul class = "links column visited">
+	     <li> <a href = "https://youtu.be/nDtTOkPmidk" target = "_blank" style="text-decoration:none"> <b> Genius hacks for everyday situations </b> </a> </li>
+		 <li> <a href = "https://www.youtube.com/watch?v=jD8n2CKEWtA" target = "_blank" style="text-decoration:none"> <b> Gardening hacks you'll want to know </b> </a> </li>
+		 <li> <a href = "https://www.youtube.com/watch?v=bn3CoNLifps" target = "_blank" style="text-decoration:none"> <b> Natural remedies for common illness </b> </a> </li>
+		 <li> <a href = "https://youtu.be/yxviTLVjvDQ" target = "_blank" style="text-decoration:none"> <b> Totally brilliant home repair tricks </b> </a> </li>
+		 <li> <a href = "https://youtu.be/XLSyg9YbCdQ" target = "_blank" style="text-decoration:none"> <b> Fast and Clever Kitchen Tricks </b> </a> </li>
+	  </ul>
+	 </nav>
+	 <button class = "button">
+	     Chat-Bot!
+	 </button>
+  </body>
+	 
