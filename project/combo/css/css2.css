@@ -1,0 +1,56 @@
+
+.h1{
+    color: black;
+    background-color: aqua;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+    font-size: 25px;
+
+}
+.u1{
+    color: red;
+    font-size: 20px;
+}
+.u11{
+    color: chartreuse;
+    font-size: 20px;
+}
+.i{
+    width: 35%;
+    height: 35%;
+}
+.h2{
+    color: black;
+    background-color:darksalmon;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 2px;
+    font-size: 35px;
+
+}
+.u2{
+    background-color:lightgoldenrodyellow ;
+    color:black;
+    display: block;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.b{
+    text-align: center;
+}
+.btn{
+    font-size: 20px;
+    background-color:lightblue;
+    color: black;
+
+}
+
+
+.s1{
+    font-size: larger;
+}
+
+
